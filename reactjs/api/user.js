@@ -9,7 +9,7 @@ export const getAll = superagent => new Promise((resolve, reject) => {
   superagent
     .get('/api/user/user')
     .query({
-      'fields[user--user]': 'id,name',
+      'fields[user--user]': 'id,name,links',
       'filter[no_anon][condition][path]': 'uid',
       'filter[no_anon][condition][operator]': '>',
       'filter[no_anon][condition][value]': '0',

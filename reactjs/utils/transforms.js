@@ -7,4 +7,5 @@
 export const user = data => ({
   name: data.name,
   id: data.id,
+  edit_link: data.links.edit,
 });

@@ -1,0 +1,16 @@
+diff --git a/src/Normalizer/Value/EntityNormalizerValue.php b/src/Normalizer/Value/EntityNormalizerValue.php
+index 945198d..8e4e99d 100644
+--- a/src/Normalizer/Value/EntityNormalizerValue.php
++++ b/src/Normalizer/Value/EntityNormalizerValue.php
+@@ -103,7 +103,10 @@ class EntityNormalizerValue implements ValueExtractorInterface, CacheableDepende
+         $rasterized['id'],
+         $this->context['resource_type'],
+         [],
+-        'individual'
++        'individual',
++      'edit' => $this->entity->access('edit', NULL, FALSE) ?
++        $this->entity->toUrl('edit-form', ['absolute' => TRUE])
++          ->toString() : NULL,
+       ),
+     ];
+ 
